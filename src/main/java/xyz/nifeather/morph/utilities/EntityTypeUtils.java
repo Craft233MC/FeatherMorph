@@ -4,14 +4,17 @@ import it.unimi.dsi.fastutil.objects.Object2ObjectArrayMap;
 import it.unimi.dsi.fastutil.objects.Object2ObjectOpenHashMap;
 import it.unimi.dsi.fastutil.objects.ObjectSet;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySpawnReason;
 import net.minecraft.world.entity.player.Player;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.CraftWorld;
+import org.bukkit.craftbukkit.util.CraftNamespacedKey;
 import org.bukkit.entity.Enemy;
 import org.bukkit.entity.EntityType;
 import org.jetbrains.annotations.NotNull;
@@ -82,7 +85,7 @@ public class EntityTypeUtils
 
         if (bukkitType == EntityType.UNKNOWN) return null;
 
-        var result = net.minecraft.world.entity.EntityType.byString(bukkitType.key().asString())
+        var result = BuiltInRegistries.ENTITY_TYPE.getOptional(CraftNamespacedKey.toMinecraft(bukkitType.getKey()))
                 .orElse(null);
 
         nmsTypeMap.put(bukkitType, result);
@@ -96,7 +99,7 @@ public class EntityTypeUtils
         var cache = nmsClassMap.getOrDefault(type, null);
         if (cache != null) return cache;
 
-        var nmsType = net.minecraft.world.entity.EntityType.byString(type.key().asString())
+        var nmsType = BuiltInRegistries.ENTITY_TYPE.getOptional(CraftNamespacedKey.toMinecraft(type.getKey()))
                 .orElse(null);
 
         if (nmsType == null)
