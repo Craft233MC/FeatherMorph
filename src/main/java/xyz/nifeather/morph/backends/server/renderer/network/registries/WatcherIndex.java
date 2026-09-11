@@ -13,6 +13,7 @@ import xyz.nifeather.morph.backends.server.renderer.network.datawatcher.watchers
 import xyz.nifeather.morph.backends.server.renderer.network.datawatcher.watchers.types.llama.TraderLlamaWatcher;
 import xyz.nifeather.morph.backends.server.renderer.network.datawatcher.watchers.types.slimemagma.MagmaWatcher;
 import xyz.nifeather.morph.backends.server.renderer.network.datawatcher.watchers.types.slimemagma.SlimeWatcher;
+import xyz.nifeather.morph.backends.server.renderer.network.datawatcher.watchers.types.slimemagma.SulfurWatcher;
 
 import java.util.Map;
 import java.util.function.Function;
@@ -36,6 +37,7 @@ public class WatcherIndex
         setTypeWatcher(EntityType.ARMOR_STAND, ArmorStandWatcher::new);
         setTypeWatcher(EntityType.SLIME, SlimeWatcher::new);
         setTypeWatcher(EntityType.MAGMA_CUBE, MagmaWatcher::new);
+        setTypeWatcher(EntityType.SULFUR_CUBE, SulfurWatcher::new);
         setTypeWatcher(EntityType.GHAST, GhastWatcher::new);
 
         setTypeWatcher(EntityType.HORSE, HorseWatcher::new);
