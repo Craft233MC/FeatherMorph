@@ -168,7 +168,7 @@ paper {
     main = "xyz.nifeather.morph.FeatherMorphMain"
     bootstrapper = "xyz.nifeather.morph.FeatherMorphBootstrap"
     apiVersion = "1.21"
-    authors = listOf("MATRIX-feather")
+    authors = listOf("MATRIX-feather", "Neokoni")
 
     serverDependencies {
         register("packetevents") {

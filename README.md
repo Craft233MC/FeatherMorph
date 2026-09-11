@@ -1,5 +1,3 @@
-Archived, feel free to fork, although I would suggest making your own, as there aren't many documents about this project :D
-
 ![cover](./assets/cover.png)
 
 <div align="center">
@@ -11,8 +9,8 @@ Archived, feel free to fork, although I would suggest making your own, as there 
 </div>
 
 ---
-![CI Status](https://github.com/NiFeather/FeatherMorph/actions/workflows/build.yml/badge.svg)
-![Release](https://img.shields.io/github/release/NiFeather/FeatherMorph.svg)
+![CI Status](https://github.com/Craft233MC/FeatherMorph/actions/workflows/build.yml/badge.svg)
+![Release](https://img.shields.io/github/release/Craft233/FeatherMorph.svg)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/NiFeather/FeatherMorph)
 
 ### Features
@@ -50,9 +48,9 @@ To display disguise server-side, we also need these plugins, depending on which 
 
 ### Download
 
-[![Available on Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/plugin/feathermorph/changelog) [![Available on GitHub](https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/cozy/available/github_vector.svg)](https://github.com/NiFeather/FeatherMorph/releases)
+[![Available on Modrinth](https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/cozy/available/modrinth_vector.svg)](https://modrinth.com/plugin/feathermorph/changelog) [![Available on GitHub](https://raw.githubusercontent.com/intergrav/devins-badges/v3/assets/cozy/available/github_vector.svg)](https://github.com/Craft233MC/FeatherMorph/releases)
 
-[Modrinth](https://modrinth.com/plugin/feathermorph/changelog) | [GitHub](https://github.com/NiFeather/FeatherMorph/releases)
+[Modrinth](https://modrinth.com/plugin/feathermorph/changelog) | [GitHub](https://github.com/Craft233MC/FeatherMorph/releases)
 
 ---
 
@@ -64,7 +62,7 @@ See [Gameplay](./docs/Gameplay.md).
 ### Building
 ```bash
 #!/usr/bin/env bash
-git clone https://github.com/NiFeather/FeatherMorph
+git clone https://github.com/Craft233MC/FeatherMorph
 cd FeatherMorph
 
 ./gradlew build --no-daemon
