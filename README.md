@@ -10,7 +10,7 @@
 
 ---
 ![CI Status](https://github.com/Craft233MC/FeatherMorph/actions/workflows/build.yml/badge.svg)
-![Release](https://img.shields.io/github/release/Craft233/FeatherMorph.svg)
+![Release](https://img.shields.io/github/release/Craft233MC/FeatherMorph.svg)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/NiFeather/FeatherMorph)
 
 ### Features
