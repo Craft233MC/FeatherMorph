@@ -112,8 +112,6 @@ dependencies {
         compileOnly(files("libs/packetevents.jar"))
     } else {
         compileOnly("com.github.retrooper:packetevents-spigot:${project.property("packetevents_version")}")
-        {
-        }
     }
 
     compileOnly(files("libs/CMILib1.4.3.5.jar"))

@@ -11,15 +11,32 @@ import org.bukkit.util.Vector;
 import org.jetbrains.annotations.NotNull;
 import xyz.nifeather.morph.abilities.ISkillAbilityOptionHandler;
 import xyz.nifeather.morph.api.morphs.skills.SkillNames;
-import xyz.nifeather.morph.messages.MessageUtils;
 import xyz.nifeather.morph.messages.strings.SkillStrings;
 import xyz.nifeather.morph.misc.DisguiseState;
 import xyz.nifeather.morph.misc.ExecutionErrorException;
 import xyz.nifeather.morph.skills.MorphSkill;
 import xyz.nifeather.morph.skills.options.TeleportConfiguration;
 
+import java.util.Set;
+
 public class TeleportMorphSkill extends MorphSkill<TeleportConfiguration>
 {
+    //危险的方块
+    public static final Set<Material> dangerousBlocks = Set.of(
+            Material.BEDROCK,
+            Material.FIRE,
+            Material.SOUL_FIRE,
+            Material.CAMPFIRE,
+            Material.SOUL_CAMPFIRE,
+            Material.LAVA_CAULDRON,
+            Material.CACTUS,
+            Material.MAGMA_BLOCK,
+            Material.SWEET_BERRIES,
+            Material.WITHER_ROSE,
+            Material.POINTED_DRIPSTONE,
+            Material.POWDER_SNOW
+    );
+
     @Override
     public ISkillAbilityOptionHandler<TeleportConfiguration> optionHandler()
     {
@@ -34,14 +51,19 @@ public class TeleportMorphSkill extends MorphSkill<TeleportConfiguration>
                     .withMessage("No option set for teleport skill")
                     .create();
 
+        //当前世界边界
+        var worldBorder = player.getWorld().getWorldBorder();
+
         //目标方块
         var targetBlock = player.getTargetBlockExact(
                 option.getMaxDistance(),
                 FluidCollisionMode.ALWAYS);
 
         if (targetBlock == null
-                || targetBlock.getBlockData().getMaterial().isAir()
-                || targetBlock.getBlockData().getMaterial().equals(Material.WATER))
+                || targetBlock.getType().isAir()
+                || targetBlock.getType().equals(Material.WATER)
+                || dangerousBlocks.contains(targetBlock.getType())
+                || !worldBorder.isInside(targetBlock.getLocation()))
         {
             sendDenyMessageToPlayer(player, SkillStrings.targetNotSuitableString());
 
